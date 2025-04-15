@@ -57,17 +57,36 @@ public class StringManipulation {
             System.out.println("No Unique character");
         }
 
-
-
-//
-//        Substring Occurrences:
-//        Find the number of occurrences of a substring within a string.
+        System.out.println("**************************");
+        System.out.println("8. Find the number of occurrences of a substring within a string.");
+        countSubStr("banana", "ana");
 //
 //                String Rotation:
 //        Check if one string is a rotation of another string.
 //
 //        Replace Characters:
 //        Replace all occurrences of a character in a string with another character.
+    }
+
+    //---------------------------------
+    public static void countSubStr(String str, String subS){
+        int count = 0, index = 0;
+        while(index < str.length()){
+            if(str.indexOf(subS, index) != -1) {
+                count++;
+                index = str.indexOf(subS, index)+1;
+            }
+            else{
+                index++;
+            }
+        }
+//        while(i + subSLen -1 < str.length()){
+//            if(str.substring(i, i+subSLen).equals(subS)){
+//                count++;
+//            }
+//            i++;
+//        }
+        System.out.println("count of substring: "+count);
     }
 
     public static Character findNonRepChar(String s){
@@ -162,6 +181,8 @@ public class StringManipulation {
 
     public static void countVowelsCon(String sentence){
         String vowelSet = "aeiou";
+
+//        System.out.println("vowelSet.contains(\"a\") "+vowelSet.contains("a"));
 
         int vowels = 0, consonants = 0;
         for(int i=0; i< sentence.length(); i++){
